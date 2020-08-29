@@ -1,4 +1,4 @@
-import { getLogger } from './logger.ts'
+import { getLogger } from 'https://deno.land/x/log/mod.ts'
 
 const logger = await getLogger()
 

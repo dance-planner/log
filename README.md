@@ -6,7 +6,7 @@ Writing warnings + errors into file. Adding date and time.
 
 ```ts
 
-import { getLogger } from './logger.ts'
+import { getLogger } from 'https://deno.land/x/log/mod.ts'
 
 const logger = await getLogger()
 
@@ -14,6 +14,8 @@ logger.debug('example debug message')
 logger.info('example info')
 logger.warning('example warning')
 logger.error('example error message')
+
+// warnings + errors are additionally written to ./log.txt file 
 
 ```
 
