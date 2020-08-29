@@ -24,7 +24,7 @@ logger.critical('example critical message')
 
 ```sh
 
-deno run --allow-read --allow-write usage-example.ts
+deno run --allow-read --allow-write https://deno.land/x/log/usage-example.ts
 
 ```
 
