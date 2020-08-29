@@ -1,5 +1,4 @@
 import { getLogger } from 'https://deno.land/x/log/mod.ts'
-
 const logger = await getLogger()
 
 logger.debug('example debug message')
