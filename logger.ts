@@ -8,7 +8,7 @@ export async function getLogger(minLevelForConsole = 'DEBUG', minLevelForFile = 
             }),
 
             file: new log.handlers.FileHandler(minLevelForFile as any, {
-                filename: fileName,
+                filename: `${Deno.cwd()}/${fileName}`,
                 formatter: "{levelName} {datetime} {msg}",
             }),
         },
