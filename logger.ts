@@ -1,7 +1,7 @@
 import * as log from "https://deno.land/std/log/mod.ts";
 import { green } from "https://deno.land/std@0.67.0/fmt/colors.ts"
 
-export async function getLogger(minLevelForConsole = 'DEBUG', minLevelForFile = 'WARNING', fileName = "./log.txt"): Promise<any> {
+export async function getLogger(minLevelForConsole = 'DEBUG', minLevelForFile = 'WARNING', fileName = "./warnings-and-errors.txt"): Promise<any> {
     await log.setup({
         handlers: {
             console: new log.handlers.ConsoleHandler(minLevelForConsole as any, {

@@ -1,9 +1,9 @@
 
-async function list(level?: string) {
+async function list(level?: string, fileName = './warnings-and-errors.txt') {
 
     const decoder = new TextDecoder('utf-8');
 
-    let lines = (decoder.decode(await Deno.readFile('./log.txt'))).split("\n");
+    let lines = (decoder.decode(await Deno.readFile(fileName))).split("\n");
 
     if (level !== undefined){
         lines = lines.filter((l: any) => l.split(' ')[0] === level)
@@ -14,4 +14,4 @@ async function list(level?: string) {
     }
 }
 
-list(Deno.args[0])
+list(Deno.args[0], Deno.args[1])

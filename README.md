@@ -16,7 +16,7 @@ logger.warning('example warning')
 logger.error('example error message')
 logger.critical('example critical message')
 
-// warnings + errors are additionally written to ./log.txt file 
+// warnings + errors are additionally written to ./warnings-and-errors.txt file 
 
 ```
 
