@@ -1,6 +1,6 @@
 # Logger
 Frequently used configuration:  
-Writing warnings + errors into file. Adding date and time.
+Writing warnings + errors into file. Adding date and time. Info Messages are green.
 
 ## Usage Example
 
