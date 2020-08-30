@@ -1,5 +1,5 @@
 import * as log from "https://deno.land/std/log/mod.ts";
-import { green } from "https://deno.land/std@0.67.0/fmt/colors.ts"
+import { green, gray } from "https://deno.land/std@0.67.0/fmt/colors.ts"
 
 export class Logger {
 
@@ -20,12 +20,15 @@ export class Logger {
             handlers: {
                 console: new log.handlers.ConsoleHandler(minLevelForConsole as any, {
                     formatter: logRecord => {
-                        let msg = `${logRecord.level} ${logRecord.msg}`;
+                        let msg = `[${logRecord.levelName}]: ${logRecord.msg}`;
     
                         logRecord.args.forEach((arg, index) => {
                             msg += `, arg${index}: ${arg}`;
                         });
     
+                        if (logRecord.level === 10) {
+                            return gray(msg)
+                        }
                         if (logRecord.level === 20) {
                             return green(msg)
                         }
