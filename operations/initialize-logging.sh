@@ -1,1 +1,1 @@
-echo "" > "./warnings-and-errors.txt"
+echo "" > "./warnings-errors.txt"

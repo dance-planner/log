@@ -1,6 +1,6 @@
 
-import { getLogger } from 'https://deno.land/x/log/mod.ts'
-const logger = await getLogger()
+import { Logger } from 'https://deno.land/x/log/mod.ts'
+const logger = await Logger.getInstance()
 
 logger.debug('example debug message')
 logger.info('example info')

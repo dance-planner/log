@@ -1,5 +1,5 @@
 
-async function list(level?: string, fileName = './warnings-and-errors.txt') {
+async function list(level?: string, fileName = './warnings-errors.txt') {
 
     const decoder = new TextDecoder('utf-8');
 
