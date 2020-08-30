@@ -29,6 +29,30 @@ deno run --allow-read --allow-write https://deno.land/x/log/usage-example.ts
 
 ```
 
+## Advanced Usage
+
+```ts
+
+import { Logger } from 'https://deno.land/x/log/mod.ts'
+
+const minLevelForConsole = 'DEBUG' // config.minLevelForConsole
+const minLevelForFile = 'WARNING' // config.minLevelForFile
+// const minLevelForConsole = 'INFO' 
+// const minLevelForFile = 'ERROR'
+// const minLevelForFile = 'CRITICAL'
+
+const fileName = "./warnings-errors.txt"
+
+const logger = await Logger.getInstance(minLevelForConsole, minLevelForFile, fileName)
+
+logger.debug('example debug message')
+logger.info('example info')
+logger.warning('example warning')
+logger.error('example error message')
+logger.critical('example critical message')
+
+```
+
 ## Support my Open Source Contributions
 
 If you like my work please consider downloading the brave browser via my
