@@ -7,9 +7,11 @@ export class Logger {
 
     public static async getInstance(minLevelForConsole = 'DEBUG', minLevelForFile = 'WARNING', fileName = "./warnings-errors.txt"){
         if (Logger.instance === undefined) {
+            log.info(`preparing a new logger \nminLevelForConsole: ${minLevelForConsole} \nminLevelForFile: ${minLevelForFile} \nfileName: ${fileName}`)
             Logger.instance = await Logger.prepareLogger(minLevelForConsole, minLevelForFile, fileName)
         }
-
+        
+        log.info(`delivering logger \nminLevelForConsole: ${minLevelForConsole} \nminLevelForFile: ${minLevelForFile} \nfileName: ${fileName}`)
         return Logger.instance
     }
 
