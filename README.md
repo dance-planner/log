@@ -8,7 +8,7 @@ Writing warnings + errors into file. Adding date and time. Info Messages are gre
 
 
 import { Logger } from 'https://deno.land/x/log/mod.ts'
-const logger = await Logger.getInstance()
+export const logger = await Logger.getInstance() // import this one in your sub modules
 
 logger.debug('example debug message')
 logger.info('example info')
@@ -43,7 +43,9 @@ const minLevelForFile = 'WARNING' // config.minLevelForFile
 
 const fileName = "./warnings-errors.txt"
 
-const logger = await Logger.getInstance(minLevelForConsole, minLevelForFile, fileName)
+// import this logger in your sub modules so that you have one logger for your whole process
+export const logger = 
+    await Logger.getInstance(minLevelForConsole, minLevelForFile, fileName)
 
 logger.debug('example debug message')
 logger.info('example info')
