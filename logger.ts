@@ -20,7 +20,8 @@ export class Logger {
             handlers: {
                 console: new log.handlers.ConsoleHandler(minLevelForConsole as any, {
                     formatter: logRecord => {
-                        let msg = `[${logRecord.levelName}]: ${logRecord.msg}`;
+                        const dateTime = new Date().toISOString()
+                        let msg = `[${logRecord.levelName}]: [${dateTime}] ${logRecord.msg}`;
     
                         logRecord.args.forEach((arg, index) => {
                             msg += `, arg${index}: ${arg}`;
