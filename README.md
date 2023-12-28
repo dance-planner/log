@@ -14,7 +14,7 @@ logger.warning('example warning')
 logger.error('example error message')
 logger.critical('example critical message')
 
-// warnings + errors are additionally written to ./warnings-errors.txt file 
+// with this warnings + errors are written to console and to ./warnings-errors.txt file 
 ```
 
 ## Trigger Usage Example
@@ -28,22 +28,19 @@ deno run --allow-read --allow-write https://deno.land/x/log/usage-example.ts
 ```ts
 import { Logger } from 'https://deno.land/x/log/mod.ts'
 
-const minLevelForConsole = 'DEBUG' // config.minLevelForConsole
-const minLevelForFile = 'WARNING' // config.minLevelForFile
-// const minLevelForConsole = 'INFO' 
-// const minLevelForFile = 'ERROR'
-// const minLevelForFile = 'CRITICAL'
+const minLevelForConsole = 'DEBUG' 
+const minLevelForFile = 'WARNING' 
 const fileName = "./warnings-errors.txt"
 
 const pureInfo = true // leaving out e.g. the time info
 
-export const logger = await Logger.getInstance('DEBUG', 'WARNING', "./warnings-errors.txt", pureInfo)
+export const logger = await Logger.getInstance(minLevelForConsole, minLevelForFile, fileName, pureInfo)
 
 logger.debug('example debug message')
 logger.info('example info')
 logger.warning('example warning')
 logger.error('example error message')
-logger.critical('example critical message') 
+logger.critical('example critical message')
 ```
 
 ## Donations
