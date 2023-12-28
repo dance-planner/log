@@ -14,7 +14,7 @@ export const logger =
     await Logger.getInstance('DEBUG', 'WARNING', "./warnings-errors.txt", pureInfo)
 
 logger.debug('example debug message')
-logger.info('example info', true)
+logger.info('example info')
 logger.warning('example warning')
 logger.error('example error message')
 logger.critical('example critical message')
