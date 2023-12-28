@@ -1,7 +1,6 @@
 # Logger
 
-Frequently used configuration:  
-Writing warnings + errors into file. Adding date and time. Info Messages are green.
+![Screenshot from 2023-12-28 16-43-21](https://github.com/dance-planner/log/assets/145258627/5a4784cc-7827-44e6-b0d8-41ad4c77edd5)
 
 ## Usage Example
 
