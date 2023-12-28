@@ -27,6 +27,7 @@ deno run --allow-read --allow-write https://deno.land/x/log/usage-example.ts
 ## Advanced Usage
 
 ```ts
+
 import { Logger } from 'https://deno.land/x/log/mod.ts'
 
 const minLevelForConsole = 'DEBUG' // config.minLevelForConsole
@@ -34,17 +35,18 @@ const minLevelForFile = 'WARNING' // config.minLevelForFile
 // const minLevelForConsole = 'INFO' 
 // const minLevelForFile = 'ERROR'
 // const minLevelForFile = 'CRITICAL'
-
 const fileName = "./warnings-errors.txt"
 
-// import this logger in your sub modules so that you have one logger for your whole process
-export const logger = await Logger.getInstance(minLevelForConsole, minLevelForFile, fileName)
+const pureInfo = true // leaving out e.g. the time info
+
+export const logger = 
+    await Logger.getInstance('DEBUG', 'WARNING', "./warnings-errors.txt", pureInfo)
 
 logger.debug('example debug message')
-logger.info('example info')
+logger.info('example info', true)
 logger.warning('example warning')
 logger.error('example error message')
-logger.critical('example critical message')
+logger.critical('example critical message') 
 ```
 
 ## Donations

@@ -1,6 +1,13 @@
 
 import { Logger } from 'https://deno.land/x/log/mod.ts'
 
+const minLevelForConsole = 'DEBUG' // config.minLevelForConsole
+const minLevelForFile = 'WARNING' // config.minLevelForFile
+// const minLevelForConsole = 'INFO' 
+// const minLevelForFile = 'ERROR'
+// const minLevelForFile = 'CRITICAL'
+const fileName = "./warnings-errors.txt"
+
 const pureInfo = true // leaving out e.g. the time info
 
 export const logger = 
