@@ -16,6 +16,7 @@ logger.error('example error message')
 logger.critical('example critical message')
 
 
+
 // other possible parameterizations might be
 // const minLevelForConsole = 'INFO' 
 // const minLevelForFile = 'ERROR'

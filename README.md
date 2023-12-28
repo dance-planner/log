@@ -41,6 +41,16 @@ logger.info('example info')
 logger.warning('example warning')
 logger.error('example error message')
 logger.critical('example critical message')
+
+// other possible parameterizations might be
+// const minLevelForConsole = 'INFO' 
+// const minLevelForFile = 'ERROR'
+// const minLevelForFile = 'CRITICAL'
+```
+## Trigger Advanced Usage Example
+
+```sh
+deno run --allow-read --allow-write https://deno.land/x/log/usage-example-advanced.ts
 ```
 
 ## Donations
