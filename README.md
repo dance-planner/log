@@ -6,44 +6,27 @@
 
 ```ts
 import { Logger } from 'https://deno.land/x/log/mod.ts'
-export const logger = await Logger.getInstance() // import this one in your sub modules
+
+const minLevelConsole = 'DEBUG' 
+const minLevelFile = 'WARNING' 
+
+const fileName = "./warnings-errors.txt"
+
+const pure = true // leaving out e.g. the time info
+
+export const logger = await Logger.getInstance(minLevelConsole, minLevelFile, fileName, pure)
 
 logger.debug('example debug message')
 logger.info('example info')
 logger.warning('example warning')
 logger.error('example error message')
 logger.critical('example critical message')
-
-// warnings + errors are additionally written to ./warnings-errors.txt file 
 ```
 
 ## Trigger Usage Example
 
 ```sh
 deno run --allow-read --allow-write https://deno.land/x/log/usage-example.ts
-```
-
-## Advanced Usage
-
-```ts
-import { Logger } from 'https://deno.land/x/log/mod.ts'
-
-const minLevelForConsole = 'DEBUG' // config.minLevelForConsole
-const minLevelForFile = 'WARNING' // config.minLevelForFile
-// const minLevelForConsole = 'INFO' 
-// const minLevelForFile = 'ERROR'
-// const minLevelForFile = 'CRITICAL'
-const fileName = "./warnings-errors.txt"
-
-const pureInfo = true // leaving out e.g. the time info
-
-export const logger = await Logger.getInstance('DEBUG', 'WARNING', "./warnings-errors.txt", pureInfo)
-
-logger.debug('example debug message')
-logger.info('example info')
-logger.warning('example warning')
-logger.error('example error message')
-logger.critical('example critical message') 
 ```
 
 ## Donations

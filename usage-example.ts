@@ -1,6 +1,13 @@
-
 import { Logger } from 'https://deno.land/x/log/mod.ts'
-export const logger = await Logger.getInstance()
+
+const minLevelConsole = 'DEBUG' 
+const minLevelFile = 'WARNING' 
+
+const fileName = "./warnings-errors.txt"
+
+const pure = true // leaving out e.g. the time info
+
+export const logger = await Logger.getInstance(minLevelConsole, minLevelFile, fileName, pure)
 
 logger.debug('example debug message')
 logger.info('example info')
