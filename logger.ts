@@ -5,12 +5,17 @@ export class Logger {
 
     private static instance: any
 
-    public static async getInstance(minLevelForConsole = 'DEBUG', minLevelForFile = 'WARNING', fileName = "./warnings-errors.txt", pureInfo?: boolean) {
+    public static async getInstance(minLevelForConsole = 'DEBUG', minLevelForFile = 'WARNING', fileName = "./warnings-errors.txt", pureInfo?: boolean, disableInternalInfo?: boolean) {
         if (Logger.instance === undefined) {
-            log.info(`preparing a new logger \nminLevelForConsole: ${minLevelForConsole} \nminLevelForFile: ${minLevelForFile} \nfileName: ${fileName}`)
+            if (disableInternalInfo !== true) {
+                log.info(`preparing a new logger \nminLevelForConsole: ${minLevelForConsole} \nminLevelForFile: ${minLevelForFile} \nfileName: ${fileName}`)
+            }
             Logger.instance = await Logger.prepareLogger(minLevelForConsole, minLevelForFile, fileName, pureInfo)
         }
-        log.info(`delivering logger \nminLevelForConsole: ${minLevelForConsole} \nminLevelForFile: ${minLevelForFile} \nfileName: ${fileName}`)
+
+        if (disableInternalInfo !== true) {
+            log.info(`delivering logger \nminLevelForConsole: ${minLevelForConsole} \nminLevelForFile: ${minLevelForFile} \nfileName: ${fileName}`)
+        }
         return Logger.instance
     }
     private static async prepareLogger(minLevelForConsole: string, minLevelForFile: string, fileName: string, pureInfo?: boolean): Promise<any> {
